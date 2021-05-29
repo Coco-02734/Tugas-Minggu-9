@@ -85,7 +85,7 @@ class Admin extends CI_Controller
 
     public function kelola()
     {
-        $data['title'] = "Daftar Produk";
+        $data['title'] = "Kelola Akun";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['user_role'] = $this->db->from('user')->join('user_role', 'user_role.id_role=user.role_id')->get()->result_array();
         $data['role'] = $this->db->get('user_role')->result_array();
